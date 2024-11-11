@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Ordo Realitas</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        #image {
+            width: 500px; /* Tamanho da imagem */
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 30px;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        /* Estilo opcional para controle do áudio */
+        audio {
+            display: none; /* Ocultar o player de áudio */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Áudio com autoplay e muted -->
+    <audio id="audio" autoplay loop muted>
+        <source src="musica.mp3" type="audio/mp3"> <!-- Substitua pelo caminho da sua música -->
+        Seu navegador não suporta o formato de áudio.
+    </audio>
+
+    <!-- Imagem e texto -->
+    <img id="image" src="veio.png" alt="Imagem" /> <!-- Substitua pelo caminho da sua imagem -->
+    <h1>A Ordo Realitas lhe aguarda</h1>
+
+    <script>
+        window.onload = function() {
+            // Fade-in do corpo
+            document.body.style.opacity = 1;
+
+            setTimeout(() => {
+                // Fade-in do título
+                document.querySelector('h1').style.opacity = 1;
+
+                // Remover o muted após um clique para ativar o som
+                document.body.addEventListener('click', function() {
+                    document.getElementById('audio').muted = false;
+                });
+            }, 500);
+        };
+    </script>
+</body>
+</html>
+

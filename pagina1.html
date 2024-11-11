@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #logo {
+            width: 500px; /* Tamanho da logo */
+            margin-bottom: 20px;
+        }
+        input {
+            background-color: #333;
+            color: white;
+            border: 1px solid #444;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 20px;
+            width: 250px;
+        }
+        button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img id="logo" src="logo.png" alt="Logo"> <!-- Substitua pelo caminho da sua logo -->
+        <input type="password" id="password" placeholder="Digite a senha">
+        <button onclick="checkPassword()">Entrar</button>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            if (password === "Olhos sempre abertos") {
+                window.location.href = "pagina2.html"; // Redireciona para a segunda página
+            } else {
+                alert("Senha incorreta.");
+            }
+        }
+    </script>
+</body>
+</html>
